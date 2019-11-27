@@ -12,19 +12,19 @@ The website directory contains three files: html, css, and the client-side js fi
 ## Client-Side js File (app.js)
 This file contains the necessary GET and POST requests. 
 
-**performAction(e)**
+**performAction(e)**</br>
 The performAction function is the main function with all the commands. 
 
-**getWeather(baseURL, zip, apiKey, CountryCode)**
+**getWeather(baseURL, zip, apiKey, CountryCode)**</br>
 getWeather is the first function to initiate. This function takes all the necessary url variables to fetch the weather data from the website openweathermap.org such as the http base url, the API key, and the country code. 
 
 The zip code is taken from the DOC as the user input value and it is labeled as zip.
 
-**PostInfo('route', data)**
+**PostInfo('route', data)**</br>
 After the data is received from the weather website, the PostInfo function, a POST request,
 sends the desired specified data to the local server. In this case, the desired data is the city based of the zip code and the temperature of that city. Then, the data gets pushed to the array projectData located on the server side.
 
-**updateUI()**
+**updateUI()**</br>
 Through a Promise chain, after the PostInfo function resolves, the updateUI also known as the magic function, initiates. This function is responsible to update the UI information such as the city, temperature, date, and the feeling response by sending a GET request to the server. The UI information gets updated by calling the proper ID's from the document and storing the new content.
 
 
