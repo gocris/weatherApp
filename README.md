@@ -1,10 +1,33 @@
-# Weather-Journal App Project
+# Weather Journal App Project
 
-## Overview
-This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
+## Description
+This project is an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
-## Instructions
-This will require modifying the `server.js` file and the `website/app.js` file. You can see `index.html` for element references, and once you are finished with the project steps, you can use `style.css` to style your application to customized perfection.
+## Server-Side js File (server.js)
+This file contains the necessery code to store information received from the client-side. Also, the server runs an express environment to run a local server.
 
-## Extras
-If you are interested in testing your code as you go, you can use `tests.js` as a template for writing and running some basic tests for your code.
+## Website Dir
+The website directory contains three files: html, css, and the client-side js file.
+
+## Client-Side js File (app.js)
+This file contains the necessary GET and POST requests. 
+
+**performAction(e)**
+The performAction function is the main function with all the commands. 
+
+**getWeather(baseURL, zip, apiKey, CountryCode)**
+getWeather is the first function to initiate. This function takes all the necessary url variables to fetch the weather data from the website openweathermap.org such as the http base url, the API key, and the country code. 
+
+The zip code is taken from the DOC as the user input value and it is labeled as zip.
+
+**PostInfo('route', data)**
+After the data is received from the weather website, the PostInfo function, a POST request,
+sends the desired specified data to the local server. In this case, the desired data is the city based of the zip code and the temperature of that city. Then, the data gets pushed to the array projectData located on the server side.
+
+**updateUI()**
+Through a Promise chain, after the PostInfo function resolves, the updateUI also known as the magic function, initiates. This function is responsible to update the UI information such as the city, temperature, date, and the feeling response by sending a GET request to the server. The UI information gets updated by calling the proper ID's from the document and storing the new content.
+
+
+
+
+
