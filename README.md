@@ -4,7 +4,7 @@
 This project is an asynchronous web app that uses Web API and user data to dynamically update the UI. 
 
 ## Server-Side js File (server.js)
-This file contains the necessery code to store information received from the client-side. Also, the server runs an express environment to run a local server.
+This file contains the necessery code to store information received from the client-side. Also, this file runs an express environment to run a local server.
 
 ## Website Dir
 The website directory contains three files: html, css, and the client-side js file.
