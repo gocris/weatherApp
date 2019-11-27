@@ -2,7 +2,7 @@
 const baseURL = 'http://api.openweathermap.org/data/2.5/weather?zip=';
 const apiKey = '&APPID=1280ff893a289bd7932be8a64340f43c';
 const countryCode = ',us';
-let count = 0;
+//let count = 0; count for an array
 
 document.getElementById('generate').addEventListener('click', performAction);
 
@@ -59,13 +59,13 @@ const updateUI = async ()=>{
     try {
         const allData = await response.json();
 
-        document.getElementById('cityUI').textContent = allData[count].city;
-        document.getElementById('dateUI').textContent = allData[count].date;
-        document.getElementById('tempUI').textContent = fair(allData[count].temp).toPrecision(2);
-        document.getElementById('contentUI').textContent = allData[count].response;
+        document.getElementById('cityUI').textContent = allData.city;
+        document.getElementById('dateUI').textContent = allData.date;
+        document.getElementById('tempUI').textContent = fair(allData.temp).toPrecision(2);
+        document.getElementById('contentUI').textContent = allData.response;
 
-        count++;
-        console.log('count: ' + count);
+        /*count++;
+        console.log('count: ' + count);*/ 
 
     } catch(error) { 
         console.log('error', error);
